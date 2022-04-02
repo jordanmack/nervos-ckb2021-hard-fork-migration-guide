@@ -2,7 +2,7 @@
 
 > Sign up [here](https://share.hsforms.com/16bQP75V4RMK_39KQiuFy1wcadup) to have important technical updates emailed to you directly in the future.
 
-In Q2 2022, Nervos Network will undergo a hard fork to upgrade the network with new features. This hard fork is non-contentious, meaning there are no parties in opposition to the changes. A complete network upgrade is expected to occur on **May 5, 2022**.
+In Q2 2022, Nervos Network will undergo a hard fork to upgrade the network with new features. This hard fork is non-contentious, meaning there are no parties in opposition to the changes. A complete network upgrade is expected to occur on **May 10, 2022**.
 
 In addition to the actual requirements for the hard fork, there are numerous updates to protocols and libraries being rolled out at the same time. This migration guide will cover the minimum steps that need to be taken to be fully compliant with all the changes being released.
 
