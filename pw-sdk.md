@@ -2,6 +2,16 @@
 
 PW-Core has been updated for compatibility with the CKB2021 hard fork. Most notably, PW-Core now supports the CKB2021 address format and Omni Lock. It is highly recommended that developers make all the changes noted below immediately to prevent fragmentation in the ecosystem.
 
+## Table of Contents
+- [Impact After Updating](#impact-after-updating)
+- [CKB2021 Address Format](#ckb2021-address-format)
+- [Omni Lock / PW-Lock](#omni-lock--pw-lock)
+- [Addresses Compatibility](#addresses-compatibility)
+- [WitnessArgs Changes for Omni Lock](#witnessargs-changes)
+- [CellDeps Changes for Omni Lock](#celldeps-changes)
+- [Examples, Tools, and Further Reading](#examples-tools-and-further-reading)
+- [Where to Report Bugs and Request Assistance](#where-to-report-bugs-and-request-assistance)
+
 ## Impact After Updating
 
 After updating PW-Core, your dapp will begin using Omni Lock and CKB2021 addresses automatically. This means that users may see a new address associated with their account when they visit your site, and their previous assets may be missing. This is because their assets are likely located on the older PW-Lock using the Pre2021 addresses. 

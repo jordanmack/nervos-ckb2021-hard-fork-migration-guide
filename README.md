@@ -6,7 +6,19 @@ In Q2 2022, Nervos Network will undergo a hard fork to upgrade the network with 
 
 In addition to the actual requirements for the hard fork, there are numerous updates to protocols and libraries being rolled out at the same time. This migration guide will cover the minimum steps that need to be taken to be fully compliant with all the changes being released.
 
-The main areas requiring attention are:
+## Table of Contents
+- [Primary Areas Requiring Attention](#primary-areas-requiring-attention)
+- [Potential Impact of Not Upgrading](#potential-impact-of-not-upgrading)
+- [1. Updating Your CKB Node and CKB Indexer Node](#1-updating-your-ckb-node-and-ckb-indexer-node)
+- [2. Update Your Supporting Libraries](#2-update-your-supporting-libraries)
+- [3. Update Your Code to Support CKB2021 Addresses](#3-update-your-code-to-support-ckb2021-addresses)
+- [4. Update Your Code to Use Omni Lock Addresses](#4-update-your-code-to-use-omni-lock-addresses)
+    - [Omni Lock Configuration for Testnet and Mainnet](#omni-lock-configuration-for-testnet-and-mainnet)
+- [5. Migration of User Assets](#5-migration-of-user-assets)
+- [Examples, Tools, and Further Reading](#examples-tools-and-further-reading)
+- [Where to Report Bugs and Request Assistance](#where-to-report-bugs-and-request-assistance)
+
+## Primary Areas Requiring Attention
 
 1.  **Update Node Software:** If you are running a CKB node or CKB Indexer node, they must be updated to the newest version which is compliant with the new hard fork consensus rules. If you do not, your node will fall out of sync.
 2.  **Update Libraries:** Your supporting libraries, such as PW-SDK, Lumos, and CKB-SDK-JS, must be updated to versions that properly support the hard fork. In some cases, you may be able to just update the library, and in other cases, you may need to update some code to work with the new libraries.
