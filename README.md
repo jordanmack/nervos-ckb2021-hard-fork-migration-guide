@@ -94,7 +94,7 @@ After updating to the CKB2021 address format you may notice that some addresses 
 
 ### PW-SDK
 
-If you are using PW-SDK, please use [this guide](https://github.com/jordanmack/pw-core/blob/dev/ckb2021.md) to update your codebase to support CKB2021 addresses.
+If you are using PW-SDK, please use [this guide](./pw-sdk.md) to update your codebase to support CKB2021 addresses.
 
 ### Lumos
 
@@ -114,7 +114,7 @@ Omni Lock is a different lock, meaning that user addresses for PW-Lock and Omni 
 
 ### PW-SDK
 
-If you are using PW-SDK, please use [this guide](https://github.com/jordanmack/pw-core/blob/dev/ckb2021.md) to update your codebase to support Omni Lock addresses.
+If you are using PW-SDK, please use [this guide](./pw-sdk.md) to update your codebase to support Omni Lock addresses.
 
 ### Lumos
 

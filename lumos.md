@@ -1,4 +1,4 @@
-# Updating for Lumos Compatibility With CKB2021
+# Updating Lumos for Compatibility With CKB2021
 
 Lumos has been updated for compatibility with the CKB2021 hard fork. It is highly recommended that developers make all the changes noted below immediately to prevent fragmentation in the ecosystem.
 
