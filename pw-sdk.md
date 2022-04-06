@@ -60,7 +60,7 @@ const omniLockAddress = new Address('ckt1qpuljza4azfdsrwjzdpea6442yfqadqhv7yzfu5
 const pwLockAddress = new Address('ckt1qpvvtay34wndv9nckl8hah6fzzcltcqwcrx79apwp2a5lkd07fdxxqwkj2pzvlujq9u9t5nzgcxszfyd49l8usghcwxk4', AddressType.ckb);
 ```
 
-When using interoperability, such as ETH addresses, the lock type can be specified in the contructor. The default is unspecified, which normally defaults to Omni Lock in methods such as `toCKBAddress()` and `toLockScript()`.
+When using interoperability, such as ETH addresses, the lock type can be specified in the contructor. The default is unspecified, which normally defaults to Omni Lock in methods such as `toCKBAddress()` and `toLockScript()`. However, you can specify `LockType.pw` to default to PW-Lock.
 
 ```typescript
 // Example of creating ETH addresses while specifying the lock type in the constructor.
@@ -77,7 +77,7 @@ Note: Specifying the lock type is not possible with the CKB address type. It can
 ```typescript
 // Example of outputting CKB addresses using different lock types.
 
-// Create an Address instances for an ETH address.
+// Create Address instances for an ETH address.
 const address = new Address('0x7aaff596c5e5e788effa0be946014b794cdd8d51', AddressType.eth);
 const addressOmni = new Address('0x7aaff596c5e5e788effa0be946014b794cdd8d51', AddressType.eth, undefined, LockType.omni);
 const addressPw = new Address('0x7aaff596c5e5e788effa0be946014b794cdd8d51', AddressType.eth, undefined, LockType.pw);
@@ -115,7 +115,7 @@ Outputting a lock script with `toLockScript()` follows the same suit as `toCKBAd
 ```typescript
 // Example of outputting lock hashes using different lock types.
 
-// Create an Address instances for an ETH address.
+// Create Address instances for an ETH address.
 const address = new Address('0x7aaff596c5e5e788effa0be946014b794cdd8d51', AddressType.eth);
 const addressOmni = new Address('0x7aaff596c5e5e788effa0be946014b794cdd8d51', AddressType.eth, undefined, LockType.omni);
 const addressPw = new Address('0x7aaff596c5e5e788effa0be946014b794cdd8d51', AddressType.eth, undefined, LockType.pw);
@@ -201,6 +201,46 @@ console.log(`${balancePw2} SUDT Tokens`);
 
 // 456 SUDT Tokens
 console.log(`${balancePw3} SUDT Tokens`);
+```
+
+Providers may also internally rely on `toCKBAddress()` and `toLockScript()`. Since a provider create an `Address()` instance internally, some providers such as `EthProvider()` allow the lock type to be specified in the constructor, which is passed to `Address()` internally.
+
+```typescript
+// Example of creating EthProvider instances and specifying the lock type.
+
+// Create EthProvider instances with different lock type values.
+const provider = new EthProvider();
+const providerOmni = new EthProvider(undefined, LockType.omni);
+const providerPw = new EthProvider(undefined, LockType.pw);
+
+// Initializer code would go here.
+
+// ckt1qpuljza4azfdsrwjzdpea6442yfqadqhv7yzfu5zknlmtusm45hpuqgp02hlt9k9uhnc3ml6p055vq2t09xdmr23qqx8wz0x (Omni Lock; ETH; CKB2021)
+console.log(provider.address.toCKBAddress());
+
+// ckt1qpuljza4azfdsrwjzdpea6442yfqadqhv7yzfu5zknlmtusm45hpuqgp02hlt9k9uhnc3ml6p055vq2t09xdmr23qqx8wz0x (Omni Lock; ETH; CKB2021)
+console.log(provider.address.toCKBAddress(undefined, LockType.omni));
+
+// ckt1qpvvtay34wndv9nckl8hah6fzzcltcqwcrx79apwp2a5lkd07fdxxqt64l6ed309u7ywl7sta9rqzjmefnwc65gnazqe7 (PW-Lock; ETH; CKB2021)
+console.log(provider.address.toCKBAddress(undefined, LockType.pw));
+
+// ckt1qpuljza4azfdsrwjzdpea6442yfqadqhv7yzfu5zknlmtusm45hpuqgp02hlt9k9uhnc3ml6p055vq2t09xdmr23qqx8wz0x (Omni Lock; ETH; CKB2021)
+console.log(providerOmni.address.toCKBAddress());
+
+// ckt1qpuljza4azfdsrwjzdpea6442yfqadqhv7yzfu5zknlmtusm45hpuqgp02hlt9k9uhnc3ml6p055vq2t09xdmr23qqx8wz0x (Omni Lock; ETH; CKB2021)
+console.log(providerOmni.address.toCKBAddress(undefined, LockType.omni));
+
+// ckt1qpvvtay34wndv9nckl8hah6fzzcltcqwcrx79apwp2a5lkd07fdxxqt64l6ed309u7ywl7sta9rqzjmefnwc65gnazqe7 (PW-Lock; ETH; CKB2021)
+console.log(providerOmni.address.toCKBAddress(undefined, LockType.pw));
+
+// ckt1qpvvtay34wndv9nckl8hah6fzzcltcqwcrx79apwp2a5lkd07fdxxqt64l6ed309u7ywl7sta9rqzjmefnwc65gnazqe7 (PW-Lock; ETH; CKB2021)
+console.log(providerPw.address.toCKBAddress());
+
+// ckt1qpuljza4azfdsrwjzdpea6442yfqadqhv7yzfu5zknlmtusm45hpuqgp02hlt9k9uhnc3ml6p055vq2t09xdmr23qqx8wz0x (Omni Lock; ETH; CKB2021)
+console.log(providerPw.address.toCKBAddress(undefined, LockType.omni));
+
+// ckt1qpvvtay34wndv9nckl8hah6fzzcltcqwcrx79apwp2a5lkd07fdxxqt64l6ed309u7ywl7sta9rqzjmefnwc65gnazqe7 (PW-Lock; ETH; CKB2021)
+console.log(providerPw.address.toCKBAddress(undefined, LockType.pw));
 ```
 
 ## Addresses Compatibility
