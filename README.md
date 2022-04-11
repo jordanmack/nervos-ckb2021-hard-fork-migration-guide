@@ -39,13 +39,13 @@ If you chose not to upgrade, your dapp may be affected in the following ways:
 
 ## 1\. Updating Your CKB Node and CKB Indexer Node
 
-If you are hosting a CKB node, it must be updated to a minimum of **version v0.101.5** in order to operate normally after the mainnet hard fork date. The CKB Indexer node must also be updated to match, with a minimum of **version v0.3.2**.
+If you are hosting a CKB node, it must be updated to a minimum of **version v0.103.0** in order to operate normally after the mainnet hard fork date. The CKB Indexer node must also be updated to match, with a minimum of **version v0.3.2**.
 
 If you are relying on externally hosted nodes by a third party, it is important to verify the host is aware of the change and has updated. You can check the version of a remote CKB node using the [local_node_info](https://github.com/nervosnetwork/ckb/blob/master/rpc/README.md#method-local_node_info) RPC method, which returns the version in the `$.result.version` key. You can check the version of a remote CKB Indexer node using the [get_indexer_info](https://github.com/nervosnetwork/ckb-indexer#get_indexer_info) RPC method, which also returns the version in the `$.result.version` key.
 
 ### 1a. Update the CKB Node
 
-Your CKB node must be updated to a version that is compatible with the hard fork. The newest version can be viewed on the [releases](https://github.com/nervosnetwork/ckb/releases) page.
+Your CKB node must be updated to a version that is compatible with the hard fork. The minimum version for hard fork compatibility is **v0.103.0** and can be found on the [releases](https://github.com/nervosnetwork/ckb/releases) page.
 
 The basic process to update your node:
 
@@ -87,16 +87,16 @@ Note: The change related to the `OutputValidator` below no longer applies in the
 
 ## 2\. Update Your Supporting Libraries
 
-New versions of the following libraries have been released in order to be fully compatible with the new CKB node, the CKB2021 address format, and support Omni Lock. If you rely on any of these libraries, it is recommended that you upgrade to the most recent version.
+New versions of the following libraries have been released in order to be fully compatible with the new CKB node, the CKB2021 address format, and support Omni Lock. If you rely on any of these libraries, it is recommended that you upgrade to a recent version with the minimum recommended listed below.
 
-- [PW-SDK](https://github.com/lay2dev/pw-core/tree/dev)
-- [Lumos](https://github.com/nervosnetwork/lumos/releases/)
-- [CKB-SDK-JS](https://github.com/nervosnetwork/ckb-sdk-js/releases)
-- [CKB-SDK-JAVA](https://github.com/nervosnetwork/ckb-sdk-java/releases)
-- [CKB-SDK-GO](https://github.com/nervosnetwork/ckb-sdk-go/releases)
-- [CKB-SDK-RUBY](https://github.com/nervosnetwork/ckb-sdk-ruby/releases/tag/v0.101.0)
-- [CKIT](https://github.com/nervosnetwork/ckit)
-- [CKB-JS-Toolkit](https://github.com/nervosnetwork/ckb-js-toolkit)
+- [PW-SDK](https://github.com/lay2dev/pw-core) (Minimum recommended: [@jm9k/pw-core@0.4.1-alpha.1](./pw-sdk.md))
+- [Lumos](https://github.com/nervosnetwork/lumos) (Minimum recommended: [v0.18.0-rc6](https://github.com/nervosnetwork/lumos/releases/))
+- [CKB-SDK-JS](https://github.com/nervosnetwork/ckb-sdk-js) (Minimum recommended: [v0.102.3](https://github.com/nervosnetwork/ckb-sdk-js/releases))
+- [CKB-SDK-JAVA](https://github.com/nervosnetwork/ckb-sdk-java) (Minimum recommended: [v1.0.0](https://github.com/nervosnetwork/ckb-sdk-java/releases))
+- [CKB-SDK-GO](https://github.com/nervosnetwork/ckb-sdk-go) (Minimum recommended: [v1.0.0](https://github.com/nervosnetwork/ckb-sdk-go/releases))
+- [CKB-SDK-RUBY](https://github.com/nervosnetwork/ckb-sdk-ruby) (Minimum recommended: [v0.101.0](https://github.com/nervosnetwork/ckb-sdk-ruby/releases))
+- [CKIT](https://github.com/nervosnetwork/ckit) (Minimum recommended: [v0.2.0](https://github.com/nervosnetwork/ckit/releases))
+- [CKB-JS-Toolkit](https://github.com/nervosnetwork/ckb-js-toolkit) (Minimum recommended: [0.100.0-rc1](https://github.com/nervosnetwork/ckb-js-toolkit/releases))
 
 ## 3\. Update Your Code to Support CKB2021 Addresses
 

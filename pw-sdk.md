@@ -2,6 +2,12 @@
 
 PW-Core has been updated for compatibility with the CKB2021 hard fork. Most notably, PW-Core now supports the CKB2021 address format and Omni Lock. It is highly recommended that developers make all the changes noted below immediately to prevent fragmentation in the ecosystem.
 
+> The current minimum version of PW-Core needed is **v0.4.1-alpha.1** on the **@jm9k** fork. This can be installed using the following command:
+>  
+> `npm i @lay2/pw-core@npm:@jm9k/pw-core@0.4.1-alpha.1`
+>  
+> New patch versions may be released over the next few weeks if any issues are found.
+
 ## Table of Contents
 - [Impact After Updating](#impact-after-updating)
 - [CKB2021 Address Format](#ckb2021-address-format)

@@ -2,6 +2,8 @@
 
 Lumos has been updated for compatibility with the CKB2021 hard fork. It is highly recommended that developers make all the changes noted below immediately to prevent fragmentation in the ecosystem.
 
+**Please use Lumos [v0.18.0-rc6](https://github.com/nervosnetwork/lumos/releases/) or higher!**
+
 ## Table of Contents
 - [Impact After Updating](#impact-after-updating)
 - [CKB2021 Address Format](#ckb2021-address-format)
